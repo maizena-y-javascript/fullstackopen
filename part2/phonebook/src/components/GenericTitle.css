@@ -1,0 +1,13 @@
+.generic-title {
+  /* border: 0.2px dashed rgba(137, 43, 226, 0.589); TEST */
+  font-family: 'Anton', system-ui, sans-serif;
+  color: transparent;
+  background: linear-gradient(
+    to bottom,
+    var(--soft-text-color) 0%,
+    var(--basic-title-color) 60%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,49 @@
+{
+  "contacts": [
+    {
+      "id": "0",
+      "name": "ABrAto Hellas",
+      "number": "040-123456"
+    },
+    {
+      "id": "1",
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523"
+    },
+    {
+      "id": "2",
+      "name": "Abrada Kadabra",
+      "number": "12-24-567890"
+    },
+    {
+      "id": "3",
+      "name": "pepe piporet",
+      "number": "39-23-6423122"
+    },
+    {
+      "id": "4",
+      "name": "abru mantis",
+      "number": "39-23-6423122"
+    },
+    {
+      "id": "596e",
+      "name": "qwdwqddqwdw",
+      "number": "qdw"
+    },
+    {
+      "id": "4f35",
+      "name": "dqqwdwqqwdqwd",
+      "number": "qd"
+    },
+    {
+      "id": "9375",
+      "name": "pep peppe",
+      "number": "32444444423"
+    },
+    {
+      "id": "cd7c",
+      "name": "wd",
+      "number": "dqwdw"
+    }
+  ]
+}

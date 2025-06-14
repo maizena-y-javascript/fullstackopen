@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --golden-ratio: 1.618; /* for visual composition, ulala */
+  --left-ratio: calc(var(--golden-ratio) - 1); /* 0.618 */
+  --right-ratio: calc(1 - var(--left-ratio)); /* 0.382 */
+
+  /* usability */
+  --min-touch-size: 46px; /* buttons and links */
+  --safe-rem: clamp(14px, 1rem, 22px); /* normalized range for 1rem */
+  --safe-inset-top: max(env(safe-area-inset-top, 0), 30px); /* edges */
+  --safe-inset-x: max(env(safe-area-inset-right, 0), 12px); /* edges */
+  
+  /* titles layout */
+  --h1-font-size: min(14svw, calc(var(--safe-rem) * 8));
+  --h2-font-size: calc(var(--h1-font-size) * var(--left-ratio));
+  --header-height: calc(var(--h1-font-size) * 1.4);
+
+  /* grid layout */
+  --gap: max(var(--safe-rem), 3svmin);
+  --mini-gap: calc(var(--gap) * var(--left-ratio));
+  --grid-space: calc(100% - 2 * var(--safe-inset-x) - 2 * var(--gap));
+  --central-width: clamp(70px, calc(100svw * var(--right-ratio)), 400px);
+  --empty-space: calc(var(--grid-space) - var(--central-width));
+  --left-width: calc(var(--empty-space) * var(--left-ratio));
+  --right-width: calc(var(--empty-space) * var(--right-ratio));
+  --row-height: min(14svmin, calc(var(--safe-rem) * 2.7));
+  --o-button-width: auto;
+  
+  /* palette */
+  --background-color: rgb(32, 38, 50);
+  --basic-title-color: rgb(49, 66, 101);
+  --soft-title-color: rgba(49, 66, 101, 0.373);
+  --basic-input-color: rgb(94, 111, 144);
+  --soft-input-color: rgba(94, 111, 144, 0.711);
+  --basic-text-color: rgb(200, 212, 237);
+  --soft-text-color: rgba(200, 212, 237, 0.545);
+  --trans-text-color: rgba(200, 212, 237, 0.232);
+}
+
+/* half of full hd (small smartphones) */
+@media only screen and (max-width: 540px) {
+  :root {
+    --o-button-width: var(--row-height);
+  }
+}
+
+html,
+body {
+  text-align: right;
+  font-size: 1.2rem;
+  font-family: 'source-sans-3', system-ui, sans-serif;
+  color: var(--basic-text-color);
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+}
+
+a, button, [role='button'] {
+  min-width: var(--min-touch-size) !important;
+  min-height: var(--min-touch-size) !important;
+  cursor: pointer;
+}
+
+input[type='text'] {
+  appearance: none;
+  -webkit-appearance: none;
+}

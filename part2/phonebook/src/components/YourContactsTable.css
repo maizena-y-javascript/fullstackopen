@@ -1,0 +1,79 @@
+.contacts-table {
+  grid-area: table-kvo;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-auto-rows: var(--row-height);
+  row-gap: var(--mini-gap);
+}
+
+.contacts-table .contacts-thead {
+  align-self: center;
+  position: sticky;
+  top: calc(var(--header-height) * 0.94);
+  z-index: 6;
+  background-color: var(--background-color);
+  font-weight: bold;
+  text-shadow: 0 0 4px var(--soft-text-color);
+}
+
+.contacts-table > :nth-child(2) {
+  text-align: center;
+}
+
+.contacts-table .field-k {
+  grid-column: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.contacts-table .field-v {
+  grid-column: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 4px;
+  color: var(--soft-text-color);
+  border-top: 2px solid var(--soft-title-color);
+  box-shadow: inset 0 20px 12px -14px var(--soft-title-color);
+  text-shadow: 0 1px 10px var(--trans-text-color);
+}
+
+.contacts-table .field-v:hover {
+  font-size: 1.4rem;
+  color: var(--basic-text-color);
+  text-shadow: 0 1px 10px var(--soft-text-color);
+  cursor: pointer;
+}
+
+.contacts-table .field-o {
+  grid-column: 3;
+}
+
+.contacts-table .field-o button  {
+  width: var(--o-button-width);
+  padding: 0 calc(var(--safe-rem) * 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 0.6rem;
+  border-top: 2px solid var(--soft-text-color);
+  color: var(--soft-text-color);
+  background-color: transparent;
+  box-shadow: none;
+  box-shadow: inset  0 -10px 10px -12px var(--trans-text-color);
+}
+
+.contacts-table .field-o button:hover {
+  border-top: 2px solid var(--basic-text-color);
+  box-shadow: inset  0 -10px 10px -4px var(--soft-text-color);
+  color: var(--background-color);
+  background-color: var(--trans-text-color);
+}
+
+.contacts-table .field-o button:active {
+  background-color: var(--soft-text-color);
+}

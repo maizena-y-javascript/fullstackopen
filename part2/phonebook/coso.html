@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+/* 1. Contenedor principal */
+.grid {
+  display: grid;
+
+  /* Definimos 4 columnas iguales */
+  grid-template-columns: repeat(4, 1fr);
+
+  /* Definimos 3 filas de 100px */
+  grid-template-rows: repeat(3, 100px);
+
+  gap: 10px;
+  padding: 10px;
+  background: #ccc;
+  height: 100vh;
+}
+
+/* 2. Hijo que ocupará varias columnas y filas */
+.bloque {
+  /* Importante: también es grid */
+  display: grid;
+
+  /* Heredamos las columnas del contenedor principal */
+  grid-template-columns: subgrid;
+
+  /* Pero creamos nuestras propias filas internas */
+  grid-template-rows: 1fr 2fr;
+
+  /* Este hijo ocupa varias celdas del abuelo */
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 2;
+
+  background: #fff;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+/* 3. Nietos (hijos internos del subgrid) */
+.nieto {
+  background: lightblue;
+  border: 1px dashed blue;
+}
+
+/* Posicionamos los nietos en las columnas heredadas */
+.nieto:nth-child(1) {
+  grid-column: 1; /* se alinea con col 2 del abuelo */
+  grid-row: 1;
+}
+.nieto:nth-child(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+</style>
+
+<div class="grid">
+  <!-- Este hijo usa subgrid en columnas -->
+  <div class="bloque">
+    <div class="nieto">Nieto 1</div>
+    <div class="nieto">Nieto 2</div>
+  </div>
+</div>
+
+</body>
+</html>

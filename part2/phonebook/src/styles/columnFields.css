@@ -1,0 +1,13 @@
+.field-k {
+  font-style: italic;
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.2rem;
+  text-shadow: 0 0 6px var(--soft-text-color);
+}
+
+/* .field-v {} */
+
+.field-o {
+  display: inline-flex;
+  justify-content: left;
+}

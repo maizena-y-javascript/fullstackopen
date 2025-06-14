@@ -1,0 +1,51 @@
+.contact-form {
+  grid-area: form-kvo;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows:
+    var(--row-height)
+    var(--row-height)
+    calc((var(--golden-ratio)) * var(--row-height));
+  row-gap: var(--mini-gap);
+}
+
+.contact-form > label {
+  grid-column: 1;
+}
+
+.contact-form > input {
+  grid-column: 2;
+}
+
+.contact-form > button {
+  grid-column: 2;
+
+  margin: 4px 0 0 1px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  font-size: min(5svw, calc(var(--safe-rem) * 1.4));
+  font-family: 'Anton', system-ui, sans-serif;
+
+  color: var(--background-color);
+  background-color: var(--basic-input-color);
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset -2px -4px 8px -2px var(--background-color);
+}
+
+.contact-form button:hover {
+  background-color: var(--soft-input-color);
+  box-shadow: inset -1px -4px 9px -6px var(--basic-text-color);
+  text-shadow: 0 0 6px var(--soft-text-color);
+}
+
+.contact-form button:active {
+  color: var(--basic-text-color);
+  box-shadow: inset -1px -2px 14px -1px var(--basic-text-color);
+  text-shadow: 0 0 12px var(--basic-text-color);
+}
